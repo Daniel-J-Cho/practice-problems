@@ -1,0 +1,9 @@
+CREATE PROCEDURE solution()
+BEGIN
+	SELECT name,
+		   id
+	  FROM Grades
+	 WHERE (100 * Final) > ((50 * Midterm2) + (50 * Midterm1)) &&
+	 (100 * Final) > ((25 * Midterm1) + (25 * Midterm2) + (50 * Final))
+  ORDER BY LEFT(name, 3) ASC, id ASC;
+END
